@@ -7,12 +7,11 @@ class IPL_Neuron_model :
 
   def forpass (self, x) :
 
-    a = self.w * x + self.b
-    return a
+    y_hat = self.w * x + self.b
+    return y_hat
 
-  def backprop (self, x, y) :
-
-    err = y - a
+  def backprop (self, x, err) :
+    
     w_grad = x * err
     b_grad = 1 * err
     return w_grad, b_grad
@@ -26,7 +25,7 @@ class IPL_Neuron_model :
         for x_i, y_i in zip(x, y) :
 
           a = forpass(x_i)
-          w_grad, b_grad = backprop(x_i, y_i)
+          w_grad, b_grad = backprop(x_i, y_hat)
           w -= w_grad
           b -= b_grad
                             
