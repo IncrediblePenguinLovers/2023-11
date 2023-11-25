@@ -13,7 +13,17 @@ class SingleLayer(nn.module):
     self.l1 = l1
     self.l2 = l2
 
-def forpass(self, x)
+  def forpass(self, x):
+
+
+
+  def backprop(self, x, err):
+
+  def fit(self, x, epochs = 100, x_val, y_val):
+
+    
+
+  
     
   
   
