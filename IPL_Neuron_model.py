@@ -1,6 +1,7 @@
 class IPL_Neuron_model :
 
-  def __init__ (self) : # 꼭 이렇게 표현해줘야 하는가 싶긴 해 self.w, self.b
+  def __init__ (self) : # i think i don't understand w and b represent self.w and self.b
+                        # 꼭 이렇게 표현해줘야 하는가 싶긴 해 self.w, self.b
 
     self.w = 1
     self.b = 1
@@ -24,10 +25,11 @@ class IPL_Neuron_model :
 
         for x_i, y_i in zip(x, y) :
 
-          a = forpass(x_i)
-          w_grad, b_grad = backprop(x_i, y_hat)
-          w -= w_grad
-          b -= b_grad
+          y_hat = forpass(x_i)
+          err = y_i - y_hat
+          w_grad, b_grad = backprop(x_i, err)
+          self.w -= w_grad
+          self.b -= b_grad
                             
 
     
